@@ -1,5 +1,6 @@
 package com.upiiz.equipos_deportivos.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -12,6 +13,7 @@ import java.util.List;
 @NoArgsConstructor
 
 @Entity
+@JsonIgnoreProperties({"jugadores_entity", "entrenadores_entity", "competencias_entity"})
 public class EquipoEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

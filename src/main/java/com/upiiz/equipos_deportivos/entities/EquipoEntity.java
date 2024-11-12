@@ -25,12 +25,12 @@ public class EquipoEntity {
     @ManyToOne(targetEntity = LigaEntity.class)
     private LigaEntity liga;
 
-    @OneToMany(targetEntity = JugadorEntity.class, fetch = FetchType.LAZY, mappedBy = "equipo")
-    private List<JugadorEntity> jugadores;
+    //@OneToMany(targetEntity = JugadorEntity.class, fetch = FetchType.LAZY, mappedBy = "equipo")
+    //private List<JugadorEntity> jugadores;
 
     @OneToOne(targetEntity = EntrenadorEntity.class)
     private EntrenadorEntity entrenador;
 
-    @ManyToMany(targetEntity = CompetenciaEntity.class, fetch = FetchType.LAZY)
-    private List<CompetenciaEntity> competencias;
+    //@ManyToMany(targetEntity = CompetenciaEntity.class, fetch = FetchType.LAZY)
+    //private List<CompetenciaEntity> competencias;
 }

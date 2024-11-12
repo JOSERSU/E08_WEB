@@ -25,7 +25,7 @@ public class LigaEntity {
 
 
     //Una liga tiene muchos equipos
-    @OneToMany(targetEntity = EquipoEntity.class, fetch = FetchType.LAZY, mappedBy = "liga")
-    private List<EquipoEntity> equipos;
+    //////@OneToMany(targetEntity = EquipoEntity.class, fetch = FetchType.LAZY, mappedBy = "liga")
+    /////private List<EquipoEntity> equipos;
 
 }

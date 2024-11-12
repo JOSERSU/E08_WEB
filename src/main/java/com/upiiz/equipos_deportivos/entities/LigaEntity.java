@@ -13,7 +13,7 @@ import java.util.List;
 @NoArgsConstructor
 
 @Entity
-@JsonIgnoreProperties("equipos:entity")
+@JsonIgnoreProperties("equipos_entity")
 public class LigaEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

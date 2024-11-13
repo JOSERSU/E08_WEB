@@ -13,7 +13,7 @@ import java.util.List;
 @NoArgsConstructor
 
 @Entity
-@JsonIgnoreProperties({"jugadores_entity", "entrenadores_entity", "competencias_entity"})
+@JsonIgnoreProperties({"jugadores_entity", "entrenadores_entity", "competencias_entity", "ligas"})
 public class EquipoEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -28,7 +28,11 @@ public class EquipoEntity {
     //@OneToMany(targetEntity = JugadorEntity.class, fetch = FetchType.LAZY, mappedBy = "equipo")
     //private List<JugadorEntity> jugadores;
 
-    @OneToOne(targetEntity = EntrenadorEntity.class)
+    //@OneToOne(targetEntity = EntrenadorEntity.class)
+    //private EntrenadorEntity entrenador;
+
+    @OneToOne
+    @JoinColumn(name = "entrenador_id") // Define la clave foránea
     private EntrenadorEntity entrenador;
 
     //@ManyToMany(targetEntity = CompetenciaEntity.class, fetch = FetchType.LAZY)

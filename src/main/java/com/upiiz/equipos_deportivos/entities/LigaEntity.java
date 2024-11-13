@@ -13,6 +13,7 @@ import java.util.List;
 @NoArgsConstructor
 
 @Entity
+@Table(name = "ligas")
 @JsonIgnoreProperties("equipos_entity")
 public class LigaEntity {
     @Id

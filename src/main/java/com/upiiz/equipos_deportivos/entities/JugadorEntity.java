@@ -11,7 +11,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 
 @Entity
-@JsonIgnoreProperties("equipos_entity")
+@Table(name = "jugadores")
+@JsonIgnoreProperties("equipos")
 public class JugadorEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,7 +23,8 @@ public class JugadorEntity {
     private String nacionalidad;
     private String posicion;
 
-    @ManyToOne(targetEntity = EquipoEntity.class)
+    @ManyToOne
+    @JoinColumn(name = "equipo_id")
     private EquipoEntity equipo;
 
 }

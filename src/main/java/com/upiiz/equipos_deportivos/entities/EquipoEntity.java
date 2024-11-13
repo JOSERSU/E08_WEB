@@ -21,20 +21,16 @@ public class EquipoEntity {
 
     private String nombre;
 
-    //un equipo pertenece solo a una liga
-    @ManyToOne(targetEntity = LigaEntity.class)
+    @ManyToOne
+    @JoinColumn(name = "liga_id")
     private LigaEntity liga;
 
-    //@OneToMany(targetEntity = JugadorEntity.class, fetch = FetchType.LAZY, mappedBy = "equipo")
-    //private List<JugadorEntity> jugadores;
+    @OneToMany(mappedBy = "equipo")
+    private List<JugadorEntity> jugadores;
 
-    //@OneToOne(targetEntity = EntrenadorEntity.class)
-    //private EntrenadorEntity entrenador;
+    @OneToMany(mappedBy = "equipo")
+    private List<EntrenadorEntity> entrenadores;
 
-    @OneToOne
-    @JoinColumn(name = "entrenador_id") // Define la clave foránea
-    private EntrenadorEntity entrenador;
-
-    //@ManyToMany(targetEntity = CompetenciaEntity.class, fetch = FetchType.LAZY)
-    //private List<CompetenciaEntity> competencias;
+    @ManyToMany(mappedBy = "equipos")
+    private List<CompetenciaEntity> competencias;
 }

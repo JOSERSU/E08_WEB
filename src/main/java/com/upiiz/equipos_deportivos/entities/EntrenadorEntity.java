@@ -11,7 +11,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 
 @Entity
-@JsonIgnoreProperties("equipos_entity")
+@Table(name = "entrenadores")
+@JsonIgnoreProperties("equipos")
 public class EntrenadorEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,7 +22,8 @@ public class EntrenadorEntity {
     private String edad;
     private String nacionalidad;
 
-    @OneToOne(mappedBy = "entrenador")
+    @ManyToOne
+    @JoinColumn(name = "equipo_id")
     private EquipoEntity equipo;
 
 }

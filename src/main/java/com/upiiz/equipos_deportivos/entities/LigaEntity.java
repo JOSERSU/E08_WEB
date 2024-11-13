@@ -14,7 +14,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "ligas")
-@JsonIgnoreProperties("equipos_entity")
+@JsonIgnoreProperties("equipos")
 public class LigaEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,8 +25,6 @@ public class LigaEntity {
     private String presidente;
 
 
-    //Una liga tiene muchos equipos
-    //////@OneToMany(targetEntity = EquipoEntity.class, fetch = FetchType.LAZY, mappedBy = "liga")
-    /////private List<EquipoEntity> equipos;
-
+    @OneToMany(mappedBy = "liga")
+    private List<EquipoEntity> equipos;
 }

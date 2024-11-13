@@ -11,8 +11,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 
 @Entity
-@Table(name = "entrenadores")
-@JsonIgnoreProperties("equipos")
+@Table(name = "equipos")
+@JsonIgnoreProperties({"jugadores", "entrenadores", "competencias"})
 public class EntrenadorEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

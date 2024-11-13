@@ -13,8 +13,8 @@ import java.util.List;
 @NoArgsConstructor
 
 @Entity
-@JsonIgnoreProperties({"jugadores_entity", "entrenadores_entity", "competencias_entity", "ligas"})
-public class EquipoEntity {
+
+@JsonIgnoreProperties({"jugadores", "entrenadores", "competencias", "ligas"})public class EquipoEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
